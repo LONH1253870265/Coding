@@ -6,15 +6,6 @@ short d(short &a,short &b)
 {
 	return a>=b?a-b:b-a;
 }
-short _11(short &w,short &l)
-{
-		if(d(w,l)>=2)
-		{
-		cout<<w<<":"<<l<<endl;
-		return 1;
-		}
-		return 0;	
-}
 void opps(short n,vector<char> &p)
 {
 	short w_11=0,l_11=0;
@@ -26,8 +17,11 @@ void opps(short n,vector<char> &p)
 			w_11++;
 		if(*it=='L')
 			l_11++; 
-		if((w_11>=n||l_11>=n)&&_11(w_11,l_11))
+		if((w_11>=n||l_11>=n)&&d(w_11,l_11)>=2)
+		{
+			cout<<w_11<<":"<<l_11<<endl;
 			w_11=l_11=0;
+		}	
 		it++;
 	}
 	cout<<w_11<<":"<<l_11<<endl;
