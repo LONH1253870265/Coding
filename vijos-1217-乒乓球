@@ -7,21 +7,19 @@ short d(short &a,short &b)
 }
 void statis(short n,vector<char> &p)
 {
-	short w_11=0,l_11=0;
-	vector<char>::iterator it;
-	it=p.begin();
-	while(*it!='E')
+	short w_11=0,l_11=0,i=0;
+	while(p[i]!='E')
 	{
-		if(*it=='W')
+		if(p[i]=='W')
 			w_11++;
-		if(*it=='L')
+		if(p[i]=='L')
 			l_11++; 
 		if((w_11>=n||l_11>=n)&&d(w_11,l_11)>=2)
 		{
 			cout<<w_11<<":"<<l_11<<endl;
 			w_11=l_11=0;
 		}	
-		it++;
+		i++;
 	}
 	cout<<w_11<<":"<<l_11<<endl;
 }
