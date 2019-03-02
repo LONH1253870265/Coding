@@ -1,0 +1,48 @@
+#include<iostream>
+#include<string>
+#include<vector>
+using namespace std;
+short d(short &a,short &b)
+{
+	return a>=b?a-b:b-a;
+}
+short _11(short &w,short &l)
+{
+		if(d(w,l)>=2)
+		{
+		cout<<w<<":"<<l<<endl;
+		return 1;
+		}
+		return 0;	
+}
+void opps(short n,vector<char> &p)
+{
+	short w_11=0,l_11=0;
+	vector<char>::iterator it;
+	it=p.begin();
+	while(*it!='E')
+	{
+		if(*it=='W')
+			w_11++;
+		if(*it=='L')
+			l_11++; 
+		if((w_11>=n||l_11>=n)&&_11(w_11,l_11))
+			w_11=l_11=0;
+		it++;
+	}
+	cout<<w_11<<":"<<l_11<<endl;
+}
+
+int main()
+{
+	vector<char>ss;
+	char ch;
+	do
+	{
+		ss.push_back((ch=getchar(),ch));		
+	}while(ch!='E');
+	opps(11,ss);
+	cout<<endl;
+	opps(21,ss);
+	return 0;
+}
