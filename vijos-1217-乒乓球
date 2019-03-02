@@ -1,12 +1,11 @@
 #include<iostream>
-#include<string>
-#include<vector>
+#include<vector>			
 using namespace std;
-short d(short &a,short &b)
+short d(short &a,short &b)		
 {
 	return a>=b?a-b:b-a;
 }
-void opps(short n,vector<char> &p)
+void statis(short n,vector<char> &p)
 {
 	short w_11=0,l_11=0;
 	vector<char>::iterator it;
@@ -35,8 +34,8 @@ int main()
 	{
 		ss.push_back((ch=getchar(),ch));		
 	}while(ch!='E');
-	opps(11,ss);
+	statis(11,ss);
 	cout<<endl;
-	opps(21,ss);
+	statis(21,ss);
 	return 0;
 }
